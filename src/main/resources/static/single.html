@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Single - Future Imperfect by HTML5 UP</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <script src="/assets/js/onepost.js"></script>
+    <script>
+        function postedit() {
+            if ($('#post_edit').hasClass("hide")) {
+                $('#post_edit').removeClass("hide")
+                let a = $('#id-postid-commet').text()
+                $('#id-postid-text').val(a);
+            } else {
+                $('#post_edit').addClass("hide")
+                $('#id-postid-text').empty()
+            }
+        }
+    </script>
+    <style>
+        .hide {
+            display: none;
+        }
+
+    </style>
+</head>
+<body class="single is-preload">
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+    <div id="posted" th:text="${id}" style="display: none"></div>
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="/">Future Imperfect</a></h1>
+        <nav class="links">
+            <ul>
+                <li><a href="#">Lorem</a></li>
+                <li><a href="#">Ipsum</a></li>
+                <li><a href="#">Feugiat</a></li>
+                <li><a href="#">Tempus</a></li>
+                <li><a href="write.html">Write</a></li>
+            </ul>
+        </nav>
+        <nav class="main">
+            <ul>
+                <li class="search">
+                    <a class="fa-search" href="#search">Search</a>
+                    <form id="search" method="get" action="#">
+                        <input type="text" name="query" placeholder="Search"/>
+                    </form>
+                </li>
+                <li class="menu">
+                    <a class="fa-bars" href="#menu">Menu</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu -->
+    <section id="menu">
+
+        <!-- Search -->
+        <section>
+            <form class="search" method="get" action="#">
+                <input type="text" name="query" placeholder="Search"/>
+            </form>
+        </section>
+
+        <!-- Links -->
+        <section>
+            <ul class="links">
+                <li>
+                    <a href="#">
+                        <h3>Lorem ipsum</h3>
+                        <p>Feugiat tempus veroeros dolor</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Dolor sit amet</h3>
+                        <p>Sed vitae justo condimentum</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Feugiat veroeros</h3>
+                        <p>Phasellus sed ultricies mi congue</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Etiam sed consequat</h3>
+                        <p>Porta lectus amet ultricies</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Actions -->
+        <section>
+            <ul class="actions stacked">
+                <li><a href="#" class="button large fit">Log In</a></li>
+            </ul>
+        </section>
+
+    </section>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Post -->
+        <article class="post">
+            <header>
+                <div class="title">
+                    <h2><a href="#">Magna sed adipiscing</a></h2>
+                    <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+                </div>
+                <div class="meta">
+                    <time class="published" datetime="2015-11-01">November 1, 2015</time>
+                    <a href="#" class="author"><span class="name">Jane Doe</span><img src="/images/avatar.jpg"
+                                                                                      alt=""/></a>
+                </div>
+            </header>
+            <span class="image featured"><img src="/images/pic01.jpg" alt=""/></span>
+            <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod
+                placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non
+                congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus
+                vitae, ultricies congue gravida diam non fringilla.</p>
+            <p>Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condimentum lectus, ut imperdiet
+                quam. Maecenas in justo ut nulla aliquam sodales vel at ligula. Sed blandit diam odio, sed fringilla
+                lectus molestie sit amet. Praesent eu tortor viverra lorem mattis pulvinar feugiat in turpis. Class
+                aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce ullamcorper
+                tellus sit amet mattis dignissim. Phasellus ut metus ligula. Curabitur nec leo turpis. Ut gravida purus
+                quis erat pretium, sed pellentesque massa elementum. Fusce vestibulum porta augue, at mattis justo.
+                Integer sed sapien fringilla, dapibus risus id, faucibus ante. Pellentesque mattis nunc sit amet tortor
+                pellentesque, non placerat neque viverra. </p>
+            <footer>
+                <ul class="stats">
+                    <li><a href="#">General</a></li>
+                    <li><a href="#" class="icon solid fa-heart">28</a></li>
+                    <li><a href="#" class="icon solid fa-comment">128</a></li>
+                </ul>
+            </footer>
+        </article>
+
+    </div>
+    <div id="comments">
+        <article class="media">
+            <figure class="media-left">
+                <p class="image is-64x64">
+                    <img src="/images/usericon.png"/>
+                </p>
+            </figure>
+            <div class="media-content">
+                <div class="content">
+                    <p>
+                        <strong>Barbara Middleton</strong>
+                        <br>
+                    <span id="id-postid-commet">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies
+                        elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus
+                        turpis.fsdafdsafdsafdsafdsaf dsfa dsa fds a fdsafdsa fweq fes afdsa few fdsaf
+
+                    </span>
+
+
+                    <form id="post_edit" class="media-content hide">
+                        <div class="field">
+                            <p class="control">
+                                <textarea id="id-postid-text" class="textarea" placeholder="Add a comment..."></textarea>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control">
+                                <button class="button">Edit Comment</button>
+                            </p>
+                        </div>
+                    </form>
+
+                    <small><a onclick="postedit()">edit</a> · <a>Reply</a> · 3 hrs</small>
+                    </p>
+                </div>
+
+            </div>
+        </article>
+
+
+    </div>
+    <form th:action="@{'/api/comment/'+${id}}" method="post">
+        <article class="media">
+            <figure class="media-left">
+                <p class="image is-64x64">
+                    <img src="/images/usericon.png"/>
+                </p>
+            </figure>
+
+            <div class="media-content">
+                <div class="field">
+                    <p class="control">
+                        <textarea class="textarea" placeholder="Add a comment..." name="contents"></textarea>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <button class="button">Post comment</button>
+                    </p>
+                </div>
+            </div>
+        </article>
+    </form>
+
+    <!-- Footer -->
+    <section id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+            <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a
+                href="http://unsplash.com">Unsplash</a>.</p>
+    </section>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="/assets/js/browser.min.js"></script>
+<script src="/assets/js/breakpoints.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>
