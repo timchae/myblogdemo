@@ -13,18 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="/assets/css/main.css"/>
     <script src="/assets/js/onepost.js"></script>
-    <script>
-        function postedit() {
-            if ($('#post_edit').hasClass("hide")) {
-                $('#post_edit').removeClass("hide")
-                let a = $('#id-postid-commet').text()
-                $('#id-postid-text').val(a);
-            } else {
-                $('#post_edit').addClass("hide")
-                $('#id-postid-text').empty()
-            }
-        }
-    </script>
+
     <style>
         .hide {
             display: none;
@@ -234,7 +223,6 @@
 </div>
 
 <!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
 <script src="/assets/js/browser.min.js"></script>
 <script src="/assets/js/breakpoints.min.js"></script>
 <script src="/assets/js/util.js"></script>

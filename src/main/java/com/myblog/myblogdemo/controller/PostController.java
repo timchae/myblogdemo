@@ -8,7 +8,9 @@ import com.myblog.myblogdemo.security.UserDetailsImpl;
 import com.myblog.myblogdemo.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +23,7 @@ public class PostController {
     private final PostService postService;
 
     @PostMapping("/api/post")
-    public String  createPost(PostRequestDto requestDto, @AuthenticationPrincipal UserDetailsImpl userDetails){
+    public String createPost(PostRequestDto requestDto, @AuthenticationPrincipal UserDetailsImpl userDetails){
         Long userId = userDetails.getUser().getId();
         String username = userDetails.getUser().getUsername();
         Post post = new Post(requestDto, userId, username);
@@ -50,7 +52,7 @@ public class PostController {
 
     @GetMapping("/api/post/{id}")
     public Optional<Post> readPost(@PathVariable Long id){
-        System.out.println(id);
+//        System.out.println(id);
         return postRepository.findById(id);
     }
 

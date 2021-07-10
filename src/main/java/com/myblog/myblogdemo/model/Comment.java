@@ -20,18 +20,20 @@ public class Comment extends Timestamped {
     private String contents;
 
     @Column(nullable = false)
-    private Long postid;
+    private Long postId;
 
     @ManyToOne
     @JoinColumn(nullable = false)
     private User user;
 
-    public Comment(CommentRequestDto requestDto, Long postid, User user) {
+    public Comment(CommentRequestDto requestDto, Long postId, User user) {
 
         this.contents = requestDto.getContents();
-        this.postid = postid;
+        this.postId = postId;
         this.user = user;
     }
 
-
+    public void update(String contents){
+        this.contents = contents;
+    }
 }

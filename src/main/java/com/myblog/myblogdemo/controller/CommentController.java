@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Controller
@@ -20,15 +22,17 @@ public class CommentController {
 
     @Autowired
     public CommentController(CommentService commentService){
+
         this.commentService = commentService;
     }
 
     @PostMapping("/api/comment/{id}")
-    public String  createPost(@PathVariable Long id, CommentRequestDto requestDto, @AuthenticationPrincipal UserDetailsImpl userDetails, Model model){
+    public String  createComment(@PathVariable Long id,CommentRequestDto requestDto, @AuthenticationPrincipal UserDetailsImpl userDetails, Model model){
         System.out.println(requestDto);
         commentService.createComment(requestDto, id,  userDetails.getUser());
         model.addAttribute("id", id);
         return "single";
-//                postRepository.save(post);
     }
+
+
 }

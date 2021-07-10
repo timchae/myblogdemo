@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+
 @Entity
 @Getter
 @NoArgsConstructor
@@ -20,9 +21,10 @@ public class Post extends Timestamped{
     @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 1000)
     private String contents;
 
+    @Column(length = 500)
     private String url;
 
     @Column(nullable = false)
